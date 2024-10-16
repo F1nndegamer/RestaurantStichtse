@@ -9,8 +9,9 @@
 </head>
 <body>
     <header>
+        <img src="assets/logo.png" alt="Logo" class="logo">
         <h1>Diner voor Ouders</h1>
-        <p>Aangeboden door de kinderen van De Stichtse Vrije School Zeist</p>
+        <p>Aangeboden door de kinderen van 8a van De Stichtse Vrije School Zeist</p>
     </header>
     
     <main>
@@ -24,18 +25,19 @@
             <input type="text" id="kind" name="kind" placeholder="Naam Kind" required>
 
             <label for="guests">Met hoeveel personen?</label>
-                <select id="guests" name="guests" required>
-                    <option value="" disabled selected>Selecteer aantal personen</option>
-                    <option value="1">1 persoon</option>
-                    <option value="2">2 personen</option>
-                    <option value="3">3 personen</option>
-                    <option value="4">4 personen</option>
-                </select>
+            <select id="guests" name="guests" required>
+                <option value="" disabled selected>Selecteer aantal personen</option>
+                <option value="1">1 persoon</option>
+                <option value="2">2 personen</option>
+                <option value="3">3 personen</option>
+                <option value="4">4 personen</option>
+            </select>
+
             <label for="email">Email Adres</label>
             <input type="email" id="email" name="email" placeholder="Email Adres" required>
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off" ></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off"></textarea>
 
             <button type="submit">Versturen</button>
         </form>
