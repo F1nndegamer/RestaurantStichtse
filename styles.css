@@ -103,12 +103,12 @@ button:focus {
     border: 2px solid white;
 }
 /* Dropdown Styling */
+/* Dropdown Styling */
 select {
     background-color: whitesmoke;
     width: 100%;
-    font-size: 20px;
-    font-size-adjust:0.5;  
-    padding: 16px;
+    font-size: 28px;  /* Increased font size */
+    padding: 20px;    /* Increased padding */
     margin-bottom: 20px;
     border: none;
     border-radius: 10px;
@@ -121,6 +121,7 @@ select:focus {
     box-shadow: 0 0 10px 3px rgba(91, 209, 131, 0.7);
     background-color: #f0f0f0;
 }
+
 
 
 /* Footer */
