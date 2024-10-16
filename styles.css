@@ -106,7 +106,7 @@ button:focus {
 select {
     background-color: whitesmoke;
     width: 100%;
-    font-size: 20px;
+    font-size: 110%;
     padding: 16px;
     margin-bottom: 20px;
     border: none;
