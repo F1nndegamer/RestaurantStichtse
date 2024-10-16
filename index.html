@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diner voor Ouders - De Stichtse Vrije School Zeist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,22 +12,26 @@
         <h1>Diner voor Ouders</h1>
         <p>Aangeboden door de kinderen van De Stichtse Vrije School Zeist</p>
     </header>
+    
+    <main>
+        <form action="https://formspree.io/f/mjkvvpgv" method="POST">
+            <h2>Schrijf je in voor het diner</h2>
 
-    <section>
-        <h2>Schrijf je in voor het diner</h2>
-        <form id="dinner-form" method="POST" action="https://formspree.io/f/xvolqzrk">
-            <label for="name">Naam:</label>
-            <input type="text" id="name" name="name" required><br>
+            <label for="first">First Name</label>
+            <input type="text" id="first" name="first" placeholder="First Name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <label for="last">Last Name</label>
+            <input type="text" id="last" name="last" placeholder="Last Name" required>
 
-            <label for="message">Opmerkingen:</label>
-            <textarea id="message" name="message" rows="4"></textarea><br>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off" required></textarea>
 
             <button type="submit">Versturen</button>
         </form>
-    </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 De Stichtse Vrije School Zeist</p>
