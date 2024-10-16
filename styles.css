@@ -51,6 +51,7 @@ input, textarea {
     background-color: whitesmoke;
     width: 100%;
     font-size: 20px;
+    
     padding: 16px;
     margin-bottom: 20px;
     border: none;
@@ -101,6 +102,26 @@ button:focus {
     outline: none;
     border: 2px solid white;
 }
+/* Dropdown Styling */
+select {
+    background-color: whitesmoke;
+    width: 100%;
+    font-size: 20px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 10px 3px rgba(91, 209, 131, 0.7);
+    background-color: #f0f0f0;
+}
+
+
 
 /* Footer */
 footer {

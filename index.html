@@ -17,26 +17,54 @@
         <form action="https://formspree.io/f/mjkvvpgv" method="POST">
             <h2>Schrijf je in voor het diner</h2>
 
-            <label for="first">First Name</label>
-            <input type="text" id="first" name="first" placeholder="First Name" required>
+            <label for="first">Volledige Naam</label>
+            <input type="text" id="first" name="first" placeholder="Volledige Naam" required>
 
-            <label for="last">Last Name</label>
-            <input type="text" id="last" name="last" placeholder="Last Name" required>
+            <label for="kind">Naam Kind</label>
+            <input type="text" id="kind" name="kind" placeholder="Naam Kind" required>
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <label for="guests">Met hoeveel personen?</label>
+            <select id="guests" name="guests" required>
+                <option value="" disabled selected>Selecteer aantal personen</option>
+                <option value="1">1 persoon</option>
+                <option value="2">2 personen</option>
+                <option value="3">3 personen</option>
+                <option value="4">4 personen</option>
+            </select>
+
+            <label for="email">Email Adres</label>
+            <input type="email" id="email" name="email" placeholder="Email Adres" required>
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off" ></textarea>
 
             <button type="submit">Versturen</button>
         </form>
     </main>
 
     <footer>
-        <p>&copy; 2024 De Stichtse Vrije School Zeist</p>
+        <p>&copy; Finn 2024</p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectElement = document.getElementById('guests');
+
+            function updateSelectColor() {
+                if (selectElement.value === "") {
+                    selectElement.style.color = '#9e9e9e'; // Placeholder color
+                } else {
+                    selectElement.style.color = 'black'; // Black color for other options
+                }
+            }
+
+            // Set initial color
+            updateSelectColor();
+
+            // Add event listener for change event
+            selectElement.addEventListener('change', updateSelectColor);
+        });
+    </script>
 </body>
 </html>
