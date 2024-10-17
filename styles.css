@@ -5,6 +5,21 @@
     padding: 0;
     font-family: 'Poppins', sans-serif; /* Updated to a more modern font */
 }
+/* Banner Styling */
+.banner {
+    background-color: #1a0457; /* Achtergrondkleur van de banner */
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    width: 100%;
+    padding: 80px 0; /* Maakt de hoogte van de banner afhankelijk van de logo-grootte */
+}
+
+/* Logo binnen de banner */
+.banner .logo {
+    width: 300px; /* Stel de breedte van het logo in */
+    height: auto; /* Houd de aspect ratio van het logo */
+}
 
 body {
     background: linear-gradient(135deg, #060616, #1f1f3b);
