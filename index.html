@@ -18,7 +18,14 @@
     </header>
     
     <main>
-        <form action="https://formspree.io/f/mjkvvpgv" method="POST">
+        <form id="mainForm" action="https://formspree.io/f/mjkvvpgv" method="POST">
+            <!-- Hidden Inputs to store data from index.html -->
+            <input type="hidden" name="first" id="firstFromIndex">
+            <input type="hidden" name="kind" id="kindFromIndex">
+            <input type="hidden" name="guests" id="guestsFromIndex">
+            <input type="hidden" name="email" id="emailFromIndex">
+            <input type="hidden" name="message" id="messageFromIndex">
+
             <h2>Schrijf je in voor het diner</h2>
 
             <label for="first">Volledige Naam</label>
@@ -42,8 +49,10 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Enter text" autocomplete="off"></textarea>
 
-            <button type="submit">Versturen</button>
+            <button<a href="preferences.html" class="btn">Voeg Allergieën en Voorkeuren Toe</a>/button>
         </form>
+
+        <a href="preferences.html" class="btn">Voeg Allergieën en Voorkeuren Toe</a>
     </main>
 
     <footer>
@@ -51,5 +60,33 @@
     </footer>
 
     <script src="script.js"></script>
+    
 </body>
+
 </html>
+<script>
+    const goToPreferencesButton = document.querySelector('#goToPreferencesButton');
+    
+    goToPreferencesButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        // Haal waarden op van het index formulier
+        const firstName = document.getElementById('first').value;
+        const kindName = document.getElementById('kind').value;
+        const guests = document.getElementById('guests').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Sla de waarden op in localStorage
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('kindName', kindName);
+        localStorage.setItem('guests', guests);
+        localStorage.setItem('email', email);
+        localStorage.setItem('message', message);
+
+        // Verwijzen naar preferences.html
+        window.location.href = 'preferences.html';
+    });
+</script>
+
+</script>

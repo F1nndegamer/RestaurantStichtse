@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergieën en Voorkeuren</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <form action="https://formspree.io/f/mjkvvpgv" method="POST">
+            <!-- Hidden Inputs for data from index.html -->
+            <input type="hidden" id="indexFirstName" name="first" value="">
+            <input type="hidden" id="indexKindName" name="kind" value="">
+            <input type="hidden" id="indexGuests" name="guests" value="">
+            <input type="hidden" id="indexEmail" name="email" value="">
+            <input type="hidden" id="indexMessage" name="me" value="">
+
+            <h2>Allergieën</h2>
+            <div class="allergies">
+                <label><input type="checkbox" name="allergies" value="Gluten"> Gluten</label>
+                <label><input type="checkbox" name="allergies" value="Noten"> Noten</label>
+                <label><input type="checkbox" name="allergies" value="Lactose"> Lactose</label>
+                <label><input type="checkbox" name="allergies" value="Schaaldieren"> Schaaldieren</label>
+                <label><input type="checkbox" id="otherAllergy"> Andere </label>
+                <label><input type="checkbox" id="noAllergies" name="allergies" value="Geen Allergieën"> Geen Allergieën</label>
+                <input type="text" id="otherAllergyText" name="allergies" placeholder="Specificeer" disabled style="display: none;">
+            </div>
+
+            <h2>Diner Voorkeuren</h2>
+            <label><input type="checkbox" id="dinerPreferenceCheckbox"> Heb je culturele voorkeuren?</label>
+            <select id="dinerPreference1" name="dinerPreference1" disabled style="display: none;">
+                <option value="" disabled selected>Kies je eerste voorkeur</option>
+                <option value="Italiaans">Italiaans</option>
+                <option value="Mexicaans">Mexicaans</option>
+                <option value="Japans">Japans</option>
+                <option value="Frans">Frans</option>
+            </select>
+            <select id="dinerPreference2" name="dinerPreference2" disabled style="display: none;">
+                <option value="" disabled selected>Kies je tweede voorkeur</option>
+                <option value="Italiaans">Italiaans</option>
+                <option value="Mexicaans">Mexicaans</option>
+                <option value="Japans">Japans</option>
+                <option value="Frans">Frans</option>
+            </select>
+            <select id="dinerPreference3" name="dinerPreference3" disabled style="display: none;">
+                <option value="" disabled selected>Kies je derde voorkeur</option>
+                <option value="Italiaans">Italiaans</option>
+                <option value="Mexicaans">Mexicaans</option>
+                <option value="Japans">Japans</option>
+                <option value="Frans">Frans</option>
+            </select>
+
+            <button type="submit">Versturen</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    // Load the data stored in localStorage when the page loads
+    window.addEventListener('load', function() {
+        document.getElementById('indexFirstName').value = localStorage.getItem('firstName');
+        document.getElementById('indexKindName').value = localStorage.getItem('kindName');
+        document.getElementById('indexGuests').value = localStorage.getItem('guests');
+        document.getElementById('indexEmail').value = localStorage.getItem('email');
+        document.getElementById('indexMessage').value = localStorage.getItem('message');
+    });
+</script>
+

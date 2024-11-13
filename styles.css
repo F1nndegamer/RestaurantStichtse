@@ -3,24 +3,29 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Updated to a more modern font */
+    font-family: 'Poppins', sans-serif;
 }
+
 /* Banner Styling */
 .banner {
-    background-color: #1a0457; /* Achtergrondkleur van de banner */
+    background-color: #1a0457;
     display: flex;
-    justify-content: top;
-    align-items: top;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    padding: 80px 0; /* Maakt de hoogte van de banner afhankelijk van de logo-grootte */
+    padding: 80px 0;
 }
 
-/* Logo binnen de banner */
-.banner .logo {
-    width: 300px; /* Stel de breedte van het logo in */
-    height: auto; /* Houd de aspect ratio van het logo */
+/* Logo Styling */
+.logo {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto -50px;
+    border-radius: 10px;
 }
 
+/* Body Styling */
 body {
     background: linear-gradient(135deg, #060616, #1f1f3b);
     font-family: 'Poppins', sans-serif;
@@ -62,11 +67,10 @@ form {
     animation: fadeIn 1s ease-in-out;
 }
 
-input, textarea {
+input, textarea, select {
     background-color: whitesmoke;
     width: 100%;
     font-size: 20px;
-    
     padding: 16px;
     margin-bottom: 20px;
     border: none;
@@ -75,21 +79,31 @@ input, textarea {
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     outline: none;
     box-shadow: 0 0 10px 3px rgba(91, 209, 131, 0.7);
     background-color: #f0f0f0;
 }
 
-textarea {
-    resize: vertical;
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #5bd183; /* Checkbox color */
+    transform: scale(1.4); /* Optional: Make checkboxes a bit larger */
+    vertical-align: middle; /* Ensures the checkbox aligns with the label text */
+    position: relative; /* To allow positioning of the glow */
 }
 
+
+/* Label Styling */
 label {
     font-size: 18px;
     color: #9e9e9e;
-    margin-bottom: 5px;
-    display: block;
+    margin-bottom: 10px;
+    display: inline-flex; /* Use inline-flex to ensure checkboxes and text are on the same line */
+    align-items: center;
+    justify-content: flex-start; /* Ensures the checkbox and label text are aligned to the left */
+    padding-left: 5px; /* Adds some padding for a cleaner look */
 }
 
 /* Button Styles */
@@ -112,18 +126,12 @@ button:hover {
     transform: translateY(-3px);
     cursor: pointer;
 }
-.logo {
-    display: block;
-    margin: 0 auto -50px; /* Center the logo and add space below */
-    width: 400px; /* Set the width of the logo */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px; /* Rounded corners */
-}
 
 button:focus {
     outline: none;
     border: 2px solid white;
 }
+
 /* Dropdown Styling */
 select {
     background-color: whitesmoke;
@@ -143,6 +151,21 @@ select:focus {
     background-color: #f0f0f0;
 }
 
+/* Hidden Section Styling */
+#culturePreferences {
+    display: none;
+    background-color: #383c44;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+#culturePreferences h3 {
+    color: #5bd183;
+    text-align: center;
+    font-size: 22px;
+}
 
 /* Footer */
 footer {
@@ -154,8 +177,7 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.4);
-    
-  margin-top: auto;
+    margin-top: auto;
 }
 
 /* Animations */
@@ -180,7 +202,11 @@ footer {
         font-size: 18px;
     }
 
-    input, textarea {
+    input, textarea, select {
+        font-size: 18px;
+    }
+
+    #culturePreferences h3 {
         font-size: 18px;
     }
 }
