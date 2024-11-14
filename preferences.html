@@ -29,7 +29,7 @@
             </div>
 
             <h2>Diner Voorkeuren</h2>
-            <label><input type="checkbox" id="dinerPreferenceCheckbox"> Heb je culturele voorkeuren?</label>
+            <label><input type="checkbox" id="dinerPreferenceCheckbox"> Heb je een voorkeur voor een bepaalde keuken?</label>
             <select id="dinerPreference1" name="dinerPreference1" disabled style="display: none;">
                 <option value="" disabled selected>Kies je eerste voorkeur</option>
                 <option value="Italiaans">Italiaans</option>
@@ -68,5 +68,22 @@
         document.getElementById('indexEmail').value = localStorage.getItem('email');
         document.getElementById('indexMessage').value = localStorage.getItem('message');
     });
+
+    // Form submit event
+    const form = document.getElementById('preferencesForm');
+    form.addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        localStorage.clear();
+        window.location.href = 'index.html';
+        // Send the form data
+        form.submit();
+
+        // Clear localStorage
+
+        // Redirect to index.html
+    });
 </script>
+
 
