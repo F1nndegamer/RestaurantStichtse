@@ -57,6 +57,38 @@ dinerPreferenceCheckbox.addEventListener('change', () => {
         dinerPreferenceSelects.forEach(select => select.value = '');
     }
 });
+const form = document.querySelector('form');
+const submitButton = document.getElementById('sucsessbutton');
+
+// Check for submission state on page load
+window.addEventListener('load', () => {
+    const isSubmitted = localStorage.getItem('formSubmitted');
+    if (isSubmitted === 'true') {
+        submitButton.innerText = "Succesvol";
+        submitButton.disabled = true;
+    }
+});
+
+// Form submit event
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission behavior
+
+    // Change the button text to "Succesvol" and save submission state
+    submitButton.innerText = "Succesvol";
+    submitButton.disabled = true;
+    localStorage.setItem('formSubmitted', 'true'); // Save submission state
+
+    // Submit the form after a short delay
+    setTimeout(() => {
+        form.submit();
+    }, 1500); // Delay to show the "Succesvol" text
+});
+
+// Clear submission state on page refresh
+window.addEventListener('beforeunload', () => {
+    localStorage.removeItem('formSubmitted');
+});
+
 
 // Handle the transfer of data from index.html to preferences.html
 window.onload = function() {
